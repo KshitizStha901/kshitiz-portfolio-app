@@ -16,11 +16,11 @@ export const profile = {
   email: "kshitizstha1007@gmail.com",
   phone: "+977 9813614667",
   phoneHref: "tel:+9779813614667",
-  // Social URLs live in lib/site.ts. Labels are derived from them there.
+  // Social URLs live in lib/site.ts.
   github: site.social.github,
   githubLabel: urlLabel(site.social.github),
   linkedin: site.social.linkedin,
-  linkedinLabel: urlLabel(site.social.linkedin),
+  linkedinLabel: site.social.linkedinLabel,
   resume: "/assets/Kshitiz_Shrestha_Resume.pdf",
   openTo: "Full-Stack · DevOps · Cloud Infrastructure",
   languages: "English (professional) · Nepali (native) · Hindi",
@@ -100,7 +100,7 @@ export const experience: Job[] = [
     link: { href: "https://skinroutineglow.com", label: "skinroutineglow.com" },
     points: [
       "Build and maintain SkinRoutineGlow, a live production skincare ecommerce platform.",
-      "Next.js 16 and React 19 frontend, Express 5 and MongoDB backend.",
+      "Next.js and React frontend, Express and MongoDB backend.",
       "Implemented JWT access and refresh authentication with httpOnly cookies.",
       "Built a Cloudinary image pipeline and transactional email flows (verification, password reset) via Nodemailer.",
       "Built a full admin dashboard covering products, orders, users, blog content and subscribers, with analytics charts.",
@@ -197,11 +197,10 @@ export const projects: Project[] = [
     stack: [
       {
         label: "Frontend",
-        items: ["Next.js 16 (App Router)", "TypeScript", "Tailwind CSS", "Zustand", "Framer Motion"],
+        items: ["Next.js (App Router)", "TypeScript", "Tailwind CSS", "Zustand", "Framer Motion"],
       },
       { label: "Backend", items: ["Node.js", "Express", "Prisma ORM", "MySQL"] },
     ],
-    note: "Backend currently being migrated from Render to AWS EC2.",
   },
   {
     name: "SkinRoutineGlow",
@@ -215,8 +214,8 @@ export const projects: Project[] = [
     summary:
       "JWT access and refresh authentication with httpOnly cookies, a Cloudinary image pipeline and transactional email flows via Nodemailer. Full admin dashboard covering products, orders, users, blog content and subscribers, with analytics charts. Order processing currently supports cash on delivery.",
     stack: [
-      { label: "Frontend", items: ["Next.js 16", "React 19"] },
-      { label: "Backend", items: ["Express 5", "MongoDB"] },
+      { label: "Frontend", items: ["Next.js", "React"] },
+      { label: "Backend", items: ["Express", "MongoDB"] },
       { label: "Services", items: ["Cloudinary", "Nodemailer", "Vercel", "Render"] },
     ],
     note: "Both frontend and backend repositories owned end to end.",

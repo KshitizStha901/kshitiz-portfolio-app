@@ -172,9 +172,20 @@ code {
 .nav__menu--desktop a {
   font-weight: 700;
   text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+/* Same background-swap hover used everywhere else in the nav (nav__cta,
+   nav__back) and on the hero/contact text links, kept consistent rather
+   than introducing a different hover style just for these links. */
+.nav__menu--mobile a:hover,
+.nav__menu--desktop a:not(.nav__cta):hover {
+  background: var(--cherry);
+  color: var(--cream);
 }
 .nav__menu--mobile a {
   padding: 0.7rem 0;
+  margin: 0 calc(var(--pad) * -1);
+  padding-inline: var(--pad);
   border-bottom: 1px solid rgba(154, 0, 2, 0.2);
 }
 .nav__menu--mobile a:last-child { border-bottom: 0; }
@@ -188,10 +199,15 @@ code {
     align-items: center;
     gap: 1.5rem;
   }
-  .nav__menu--desktop a { font-size: 0.95rem; }
+  .nav__menu--desktop a {
+    font-size: 0.95rem;
+    padding: 0.3rem 0.5rem;
+    margin: 0 -0.5rem;
+  }
   .nav__menu--desktop .nav__cta {
     border: var(--border-thin);
     padding: 0.4rem 0.9rem;
+    margin: 0;
   }
   .nav__menu--desktop .nav__cta:hover { background: var(--cherry); color: var(--cream); }
 }

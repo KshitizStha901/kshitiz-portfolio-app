@@ -43,13 +43,13 @@ responsibility:
 - Backend API and data model
 - Authentication and access control
 - Image and email infrastructure
-- Deployment and the ongoing migration described below
+- Deployment
 
 ## Architecture
 
 The system is three deployable pieces rather than one monolith:
 
-1. **Storefront**, a Next.js 16 App Router application in TypeScript.
+1. **Storefront**, a Next.js App Router application in TypeScript.
 2. **Admin panel**, a second standalone Next.js application, kept separate from
    the storefront so the two have independent surfaces.
 3. **Backend API**, a Node.js and Express service using Prisma ORM over MySQL.
@@ -93,9 +93,3 @@ Transactional email is sent with **Nodemailer**.
 
 Order processing currently supports cash on delivery, which is the payment
 method the store operates with today.
-
-## Deployment and Current Work
-
-The backend is being migrated from Render to **AWS EC2**. That work is ongoing
-at the time of writing, so the deployment story here is a snapshot rather than a
-finished state.
