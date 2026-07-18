@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 // Self-hosted at build time by next/font, so there is no external
@@ -11,10 +12,8 @@ const archivo = Archivo({
   variable: "--font-archivo",
 });
 
-const SITE = "https://kshitizshrestha.com.np";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE),
+  metadataBase: new URL(site.url),
   title: "Kshitiz Shrestha | Full-Stack Developer, Cloud and Systems",
   description:
     "Kshitiz Shrestha, full-stack developer in Kathmandu, Nepal. Next.js, React, Node, Express, MongoDB, AWS. BSc CSIT, AWS Solutions Architect Associate.",
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: SITE,
+    url: site.url,
     title: "Kshitiz Shrestha | Full-Stack Developer, Cloud and Systems",
     description:
       "Full-stack developer building a live production ecommerce platform on Next.js, React, Express and MongoDB. BSc CSIT graduate, AWS Solutions Architect Associate.",
@@ -40,7 +39,7 @@ const personSchema = {
   jobTitle: "Full-Stack Developer",
   email: "mailto:kshitizstha1007@gmail.com",
   telephone: "+977-9813614667",
-  url: SITE,
+  url: site.url,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Balaju, Kathmandu",

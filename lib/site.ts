@@ -5,7 +5,7 @@
 
 export const site = {
   /** Used for canonical URLs, Open Graph and JSON-LD. Must match public/CNAME. */
-  url: "https://kshitizshrestha.com.np",
+  url: "https://kshitizshrestha2058.com.np",
 
   /**
    * ===================================================================
