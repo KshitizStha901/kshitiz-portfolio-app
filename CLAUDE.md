@@ -42,7 +42,7 @@ Next.js App Router, configured for static export (`output: "export"` in `next.co
 
 **Optional assets** (`lib/media.ts`, server-only): `resolvePortrait()` / `publicFileExists()` check the filesystem at build time so an unset image (e.g. the About section's portrait) is simply omitted rather than rendering a broken `<img>`. Follow this pattern for any other optional media rather than assuming a file exists.
 
-**Deploy**: `.github/workflows/deploy.yml` runs on push to `main` — `npm ci`, `npm run build`, then publishes `out/` via `actions/deploy-pages`. GitHub repo settings must have Pages source set to "GitHub Actions" (not "Deploy from a branch") for this to take effect. The custom domain lives in `public/CNAME` and must match `lib/site.ts`'s `site.url`.
+**Deploy**: `.github/workflows/deploy.yml` runs on push to `main` — `npm ci`, `npm run build`, then publishes `out/` via `actions/deploy-pages`. GitHub repo settings must have Pages source set to "GitHub Actions" (not "Deploy from a branch") for this to take effect; every deploy silently failed until this was set, because the workflow's `configure-pages` step 404s if Pages isn't already enabled with that source. The custom domain lives in `public/CNAME` and must match `lib/site.ts`'s `site.url`. DNS for the domain is hosted on Cloudflare (not the registrar directly, since the `.com.np` registrar only offers nameserver delegation, not record-level editing); GitHub Pages requires those DNS records to be **DNS only** (grey cloud), not Proxied, or GitHub cannot issue the HTTPS certificate.
 
 ## Conventions
 
